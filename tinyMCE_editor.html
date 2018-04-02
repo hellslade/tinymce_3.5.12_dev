@@ -21,7 +21,7 @@
 	    theme_advanced_resizing : true,
 
 	    // Example content CSS (should be your site CSS)
-	    content_css : "[CSS]",
+	    //content_css : "[CSS]",
 
 	    // Drop lists for link/image/media/template dialogs
 	    template_external_list_url : "lists/template_list.js",
@@ -36,8 +36,16 @@
 	  	},
 		setup : function(ed) {
 	      ed.onInit.add(function(e, evt) {
-			  // console.log('Editor was clicked');
-	          //ed.execCommand('mceFullScreen');
+			// console.log('Editor was clicked');
+	        // ed.execCommand("mceFullScreen");
+			console.log('onInit');
+			if (ed.id != "mce_fullscreen") {
+				console.log('Editor IF');
+				console.log('Editor is done: ' + ed.id);
+				console.log('Editor is done: ' + ed.buttons.fullscreen.onclick);
+				//ed.buttons.fullscreen.onclick();
+			  	// ed.execCommand("mceFullScreen");
+			}
 	      });
    		}
 	  });
@@ -46,6 +54,6 @@
 
 </head>
 <body>
-<textarea id="elm1" width=100% height=100%></textarea>
+	<textarea id="elm1"  style="width:100%"></textarea>
 </body>
 </html>
