@@ -34,20 +34,50 @@
 	      username : "Some User",
 	      staffid : "991234"
 	  	},
-		setup : function(ed) {
-	      ed.onInit.add(function(e, evt) {
-			// console.log('Editor was clicked');
-	        // ed.execCommand("mceFullScreen");
-			console.log('onInit');
-			if (ed.id != "mce_fullscreen") {
-				console.log('Editor IF');
-				console.log('Editor is done: ' + ed.id);
-				console.log('Editor is done: ' + ed.buttons.fullscreen.onclick);
-				//ed.buttons.fullscreen.onclick();
-			  	// ed.execCommand("mceFullScreen");
-			}
-	      });
-   		}
+		oninit: function() {
+				console.log('oninit');
+                tinyMCE.get('elm1').execCommand('mceFullScreen');
+			},
+		setup: function(editor) {
+		    editor.addButton('mybutton', {
+			    type: 'menubutton',
+			    text: 'My button',
+			    icon: false,
+			    menu: [{
+				      	text: 'Menu item 1',
+				      	onclick: function() {
+					        editor.insertContent('&nbsp;<strong>Menu item 1 text inserted here!</strong>&nbsp;');
+				        }
+			      	}, {
+		        		text: 'Menu item 2',
+		        		menu: [{
+				          		text: 'Submenu item 1',
+				          		onclick: function() {
+				            		editor.insertContent('&nbsp;<em>Submenu item 1 text inserted here!</em>&nbsp;');
+			          			}
+		        			}]
+		      		}]
+		    });
+			// editor.onInit.add(function(e) {
+			// 	console.log('onInit');
+			// 	//editor.execCommand("mceFullScreen");
+			// });
+		}
+
+		// setup : function(ed) {
+	    //   ed.onInit.add(function(e, evt) {
+		// 	// console.log('Editor was clicked');
+	    //     // ed.execCommand("mceFullScreen");
+		// 	console.log('onInit');
+		// 	if (ed.id != "mce_fullscreen") {
+		// 		console.log('Editor IF');
+		// 		console.log('Editor is done: ' + ed.id);
+		// 		console.log('Editor is done: ' + ed.buttons.fullscreen.onclick);
+		// 		//ed.buttons.fullscreen.onclick();
+		// 	  	// ed.execCommand("mceFullScreen");
+		// 	}
+	    //   });
+   		// }
 	  });
 	</script>
 <!-- /TinyMCE -->
