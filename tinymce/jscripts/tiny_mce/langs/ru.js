@@ -2,67 +2,67 @@ tinyMCE.addI18n({
     ru: {
         common: {
             "more_colors": "Другие цвета ...",
-            "invalid_data": "Error: Invalid values entered, these are marked in red.",
-            "popup_blocked": "Sorry, but we have noticed that your popup-blocker has disabled a window that provides application functionality. You will need to disable popup blocking on this site in order to fully utilize this tool.",
-            "clipboard_no_support": "Currently not supported by your browser, use keyboard shortcuts instead.",
-            "clipboard_msg": "Copy/Cut/Paste is not available in Mozilla and Firefox.\nDo you want more information about this issue?",
-            "not_set": "-- Not Set --",
+            "invalid_data": "Ошибка: Введено некорректное значение, оно отмечено красным цветом.",
+            "popup_blocked": "Извините, но мы заметили, что Вы пользуетесь блокировщиком всплывающих окон, блокирующим функционал редактора. Вы должны разблокировать всплывающие окна на этом сайте, чтобы в полной мере пользоваться всеми возможностями редактора.",
+            "clipboard_no_support": "В настоящий момент не поддерживается Вашим браузером. Пользуйтесь горячими клавишами.",
+            "clipboard_msg": "Копировать/Вырезать/Вставить не поддерживается Mozilla и Firefox.\nВы хотите узнать больше по этому вопросу?",
+            "not_set": "-- Не установлено --",
             "class_name": "Class",
-            browse: "Browse",
-            close: "Close",
-            cancel: "Cancel",
-            update: "Update",
-            insert: "Insert",
-            apply: "Apply",
-            "edit_confirm": "Do you want to use the WYSIWYG mode for this textarea?",
-            "invalid_data_number": "{#field} must be a number",
-            "invalid_data_min": "{#field} must be a number greater than {#min}",
-            "invalid_data_size": "{#field} must be a number or percentage",
-            value: "(value)"
+            browse: "Обзор",
+            close: "Закрыть",
+            cancel: "Отменить",
+            update: "Обновить",
+            insert: "Вставить",
+            apply: "Применить",
+            "edit_confirm": "Вы хотите использовать режим WYSIWYG в этом текстовом поле?",
+            "invalid_data_number": "{#field} должно быть числом",
+            "invalid_data_min": "{#field} должно быть числом, большим чем {#min}",
+            "invalid_data_size": "{#field} должно быть числом или выражено в процентах",
+            value: "(значение)"
         },
         contextmenu: {
-            full: "Full",
-            right: "Right",
-            center: "Center",
-            left: "Left",
-            align: "Alignment"
+            full: "По ширине",
+            right: "Справа",
+            center: "По центру",
+            left: "Слева",
+            align: "Выравнивание"
         },
         insertdatetime: {
-            "day_short": "Sun,Mon,Tue,Wed,Thu,Fri,Sat,Sun",
-            "day_long": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday",
-            "months_short": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",
-            "months_long": "January,February,March,April,May,June,July,August,September,October,November,December",
-            "inserttime_desc": "Insert Time",
-            "insertdate_desc": "Insert Date",
+            "day_short": "Вс,Пн,Вт,Ср,Чт,Пт,Сб,Вс",
+            "day_long": "Воскресенье,Понедельник,Вторник,Среда,Четверг,Пятница,Суббота,Воскресенье",
+            "months_short": "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек",
+            "months_long": "Январь,Февраль,Март,Апрель,Май,Июнь,Июль,Август,Сентябрь,Октябрь,Ноябрь,Декабрь",
+            "inserttime_desc": "Вставить время",
+            "insertdate_desc": "Вставить дату",
             "time_fmt": "%H:%M:%S",
             "date_fmt": "%Y-%m-%d"
         },
         print: {
-            "print_desc": "Print"
+            "print_desc": "Печать"
         },
         unrlnstr: {
             "unrlnstr_desc": "Добавить подчеркнутую строку"
         },
         preview: {
-            "preview_desc": "Preview"
+            "preview_desc": "Предпросмотр"
         },
         directionality: {
-            "rtl_desc": "Direction Right to Left",
-            "ltr_desc": "Direction Left to Right"
+            "rtl_desc": "Справа налево",
+            "ltr_desc": "Слева направо"
         },
         layer: {
-            content: "New layer...",
-            "absolute_desc": "Toggle Absolute Positioning",
-            "backward_desc": "Move Backward",
-            "forward_desc": "Move Forward",
-            "insertlayer_desc": "Insert New Layer"
+            content: "Новый блок...",
+            "absolute_desc": "Переключить абсолютное позиционирование",
+            "backward_desc": "Передвинуть назад",
+            "forward_desc": "Передвинуть вперед",
+            "insertlayer_desc": "Вставить новый блок"
         },
         save: {
-            "save_desc": "Save",
-            "cancel_desc": "Cancel All Changes"
+            "save_desc": "Сохранить",
+            "cancel_desc": "Отменить все изменения"
         },
         nonbreaking: {
-            "nonbreaking_desc": "Insert Non-Breaking Space Character"
+            "nonbreaking_desc": "Вставить неразрывный пробел"
         },
         iespell: {
             download: "ieSpell not detected. Do you want to install it now?",
@@ -71,28 +71,28 @@ tinyMCE.addI18n({
         advhr: {
             "delta_height": "",
             "delta_width": "",
-            "advhr_desc": "Insert Horizontal Line"
+            "advhr_desc": "Вставить горизонтальную линию"
         },
         emotions: {
             "delta_height": "",
             "delta_width": "",
-            "emotions_desc": "Emotions"
+            "emotions_desc": "Смайлы"
         },
         searchreplace: {
-            "replace_desc": "Find/Replace",
+            "replace_desc": "Найти/Заменить",
             "delta_width": "",
             "delta_height": "",
-            "search_desc": "Find"
+            "search_desc": "Найти"
         },
         advimage: {
             "delta_width": "",
-            "image_desc": "Insert/Edit Image",
+            "image_desc": "Вставить/Редактировать изображение",
             "delta_height": ""
         },
         advlink: {
             "delta_height": "",
             "delta_width": "",
-            "link_desc": "Insert/Edit Link"
+            "link_desc": "Вставить/Редактировать гиперссылку"
         },
         xhtmlxtras: {
             "attribs_delta_height": "",
@@ -107,29 +107,29 @@ tinyMCE.addI18n({
             "abbr_delta_width": "",
             "cite_delta_height": "",
             "cite_delta_width": "",
-            "attribs_desc": "Insert/Edit Attributes",
-            "ins_desc": "Insertion",
-            "del_desc": "Deletion",
+            "attribs_desc": "Вставить/Редактировать атрибуты",
+            "ins_desc": "Вставляемое",
+            "del_desc": "Удаляемое",
             "acronym_desc": "Acronym",
-            "abbr_desc": "Abbreviation",
+            "abbr_desc": "Аббревиатура",
             "cite_desc": "Citation"
         },
         style: {
             "delta_height": "",
             "delta_width": "",
-            desc: "Edit CSS Style"
+            desc: "Редактировать стиль CSS"
         },
         paste: {
-            "plaintext_mode_stick": "Paste is now in plain text mode. Click again to toggle back to regular paste mode.",
-            "plaintext_mode": "Paste is now in plain text mode. Click again to toggle back to regular paste mode. After you paste something you will be returned to regular paste mode.",
-            "selectall_desc": "Select All",
-            "paste_word_desc": "Paste from Word",
-            "paste_text_desc": "Paste as Plain Text"
+            "plaintext_mode_stick": "Вставка находится в режиме 'только текст'. Нажмите еще раз, чтобы переключиться в режим обычной вставки.",
+            "plaintext_mode": "Вставка находится в режиме 'только текст'. Нажмите еще раз, чтобы переключиться в режим обычной вставки. После вставки вы вернетесь в режим обычной вставки.",
+            "selectall_desc": "Выбрать все",
+            "paste_word_desc": "Вставить из MS Word",
+            "paste_text_desc": "Вставить как простой текст"
         },
         "paste_dlg": {
-            "word_title": "Use Ctrl+V on your keyboard to paste the text into the window.",
-            "text_linebreaks": "Keep Linebreaks",
-            "text_title": "Use Ctrl+V on your keyboard to paste the text into the window."
+            "word_title": "Используйте сочетание клавиш Ctrl+V чтобы вставить текст в окно.",
+            "text_linebreaks": "Сохранить переносы строк",
+            "text_title": "Используйте сочетание клавиш Ctrl+V чтобы вставить текст в окно."
         },
         table: {
             "merge_cells_delta_height": "",
@@ -140,51 +140,51 @@ tinyMCE.addI18n({
             "cellprops_delta_width": "",
             "rowprops_delta_height": "",
             "rowprops_delta_width": "",
-            cell: "Cell",
-            col: "Column",
-            row: "Row",
-            del: "Delete Table",
-            "copy_row_desc": "Copy Table Row",
-            "cut_row_desc": "Cut Table Row",
-            "paste_row_after_desc": "Paste Table Row After",
-            "paste_row_before_desc": "Paste Table Row Before",
-            "props_desc": "Table Properties",
-            "cell_desc": "Table Cell Properties",
-            "row_desc": "Table Row Properties",
-            "merge_cells_desc": "Merge Table Cells",
-            "split_cells_desc": "Split Merged Table Cells",
-            "delete_col_desc": "Delete Column",
-            "col_after_desc": "Insert Column After",
-            "col_before_desc": "Insert Column Before",
-            "delete_row_desc": "Delete Row",
-            "row_after_desc": "Insert Row After",
-            "row_before_desc": "Insert Row Before",
-            desc: "Insert/Edit Table"
+            cell: "Ячейка",
+            col: "Колонка",
+            row: "Строка",
+            del: "Удалить таблицу",
+            "copy_row_desc": "Скопировать строку таблицы",
+            "cut_row_desc": "Вырезать строку таблицы",
+            "paste_row_after_desc": "Вставить строку после текущей",
+            "paste_row_before_desc": "Вставить строку перед текущей",
+            "props_desc": "Свойства таблицы",
+            "cell_desc": "Свойства ячейки",
+            "row_desc": "Свойства строки",
+            "merge_cells_desc": "Объединить ячейки",
+            "split_cells_desc": "Разъединить ячейки",
+            "delete_col_desc": "Удалить колонку",
+            "col_after_desc": "Вставить колонку перед",
+            "col_before_desc": "Вставить колонку после",
+            "delete_row_desc": "Удалить строку",
+            "row_after_desc": "Добавить строку перед",
+            "row_before_desc": "Добавить строку после",
+            desc: "Вставить/Редактировать таблицу"
         },
         autosave: {
-            "warning_message": "If you restore the saved content, you will lose all the content that is currently in the editor.\n\nAre you sure you want to restore the saved content?",
-            "restore_content": "Restore auto-saved content.",
-            "unload_msg": "The changes you made will be lost if you navigate away from this page."
+            "warning_message": "Если вы восстановите сохраненное содержимое, вы потеряете текущее содержимое редактора.\n\nВы уверены, что хотите восстановить сохраненное содержимое?",
+            "restore_content": "Восстановить автосохраненное содержимое.",
+            "unload_msg": "Вы можете потерять несохраненные изменения, если покинете эту страницу."
         },
         fullscreen: {
-            desc: "Toggle Full Screen Mode"
+            desc: "Переключить полноэкранный режим"
         },
         media: {
             "delta_height": "",
             "delta_width": "",
-            edit: "Edit Embedded Media",
-            desc: "Insert/Edit Embedded Media"
+            edit: "Редактировать встроенный Медиа",
+            desc: "Вставить/Редактировать встроенный Медиа"
         },
         fullpage: {
-            desc: "Document Properties",
+            desc: "Свойства документа",
             "delta_width": "",
             "delta_height": ""
         },
         template: {
-            desc: "Insert Predefined Template Content"
+            desc: "Вставить предопределенный шаблон"
         },
         visualchars: {
-            desc: "Show/Hide Visual Control Characters"
+            desc: "Показать/Скрыть символы визуального контроля. "
         },
         spellchecker: {
             desc: "Toggle Spell Checker",
@@ -199,7 +199,7 @@ tinyMCE.addI18n({
             "learn_word": "Learn word"
         },
         pagebreak: {
-            desc: "Insert Page Break for Printing"
+            desc: "Вставить разрыв страницы"
         },
         advlist: {
             types: "Types",
@@ -209,9 +209,9 @@ tinyMCE.addI18n({
             "lower_roman": "Lower Roman",
             "upper_alpha": "Upper Alpha",
             "upper_roman": "Upper Roman",
-            circle: "Circle",
-            disc: "Disc",
-            square: "Square"
+            circle: "Круг",
+            disc: "Диск",
+            square: "Квадрат"
         },
         colors: {
             "333300": "Dark olive",
@@ -256,13 +256,13 @@ tinyMCE.addI18n({
             FFFFFF: "White"
         },
         aria: {
-            "rich_text_area": "Rich Text Area"
+            "rich_text_area": "Поле форматированного текста"
         },
         wordcount: {
-            words: "Words:"
+            words: "Количество слов:"
         },
         visualblocks: {
-            desc: 'Show/hide block elements'
+            desc: 'Показать/Скрыть блоки элементов'
         }
     }
 });
