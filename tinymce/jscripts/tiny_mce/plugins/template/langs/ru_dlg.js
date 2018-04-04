@@ -1,15 +1,15 @@
 tinyMCE.addI18n('ru.template_dlg', {
-    title: "Templates",
-    label: "Template",
-    "desc_label": "Description",
-    desc: "Insert Predefined Template Content",
-    select: "Select a Template",
-    preview: "Preview",
-    warning: "Warning: Updating a template with a different one may cause data loss.",
+    title: "Шаблоны",
+    label: "Шаблон",
+    "desc_label": "Описание",
+    desc: "Вставить предопределенный шаблон",
+    select: "Выберите шаблон",
+    preview: "Просмотр",
+    warning: "Предупреждение: Обновление шаблона другим шаблонов может привести к потере данных.",
     "mdate_format": "%Y-%m-%d %H:%M:%S",
     "cdate_format": "%Y-%m-%d %H:%M:%S",
-    "months_long": "January,February,March,April,May,June,July,August,September,October,November,December",
-    "months_short": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",
-    "day_long": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday",
-    "day_short": "Sun,Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+    "months_long": "Январь,Февраль,Март,Апрель,Май,Июнь,Июль,Август,Сентябрь,Октябрь,Ноябрь,Декабрь",
+    "months_short": "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек",
+    "day_long": "Воскресенье,Понедельник,Вторник,Среда,Четверг,Пятница,Суббота,Воскресенье",
+    "day_short": "Вс,Пн,Вт,Ср,Чт,Пт,Сб,Вс"
 });
