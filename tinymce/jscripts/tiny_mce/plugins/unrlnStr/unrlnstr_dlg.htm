@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#unrlnstr_dlg.title}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<form onsubmit="UnrlnStrDialog.insert();return false;" action="#">
+	<fieldset style="background-color:#ffffff;">
+		<legend>{#unrlnstr_dlg.title}</legend>
+		<table role="presentation" border="0" cellpadding="4" cellspacing="0" width="100%">
+			<tr>
+				<td><label id="prefixlabel" for="prefix">{#unrlnstr_dlg.prefix}</label></td>
+				<td width="50%"><input id="prefix" name="prefix" type="text" class="text" width="100%" /></td>
+				<td><label id="suffixlabel" for="suffix">{#unrlnstr_dlg.suffix}</label></td>
+				<td width="50%"><input id="suffix" name="suffix" type="text" class="text" width="100%" /></td>
+			</tr>
+			<tr>
+				<td><label id="parametrlabel" for="parametr">{#unrlnstr_dlg.text_string}</label></td>
+				<td colspan="3" width="100%"><input id="parametr" name="parametr" type="text" class="text" /></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<div class="mceActionPanel">
+		<input type="submit" id="insert" name="insert" value="{#insert}"" />
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	</div>
+
+</form>
+
+</body>
+</html>
