@@ -1,0 +1,40 @@
+/* CSS file for tinyMCE content_css */
+
+ol, ul, p {
+	font-size: 16px;
+	font-family: times new roman,times,serif;
+	line-height:1.15;
+	margin:0;
+	white-space:pre-wrap;
+	}
+body {
+	margin:0;
+	padding:8px;
+	}
+img {
+	border:none;
+	}
+
+.standart {
+	font-size: 16px;
+	font-family: times new roman,times,serif;
+	line-height:3;
+	margin:0;
+	white-space:pre-wrap;
+}
+
+.panel_wrapper div.current {
+	height: 200px;
+}
+
+.advfield {
+	width: 200px;
+}
+
+#action {
+	margin-bottom: 3px;
+}
+
+#class {
+	width: 150px;
+}
