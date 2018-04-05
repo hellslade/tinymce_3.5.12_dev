@@ -41,7 +41,9 @@ tinyMCE.addI18n({
             "print_desc": "Печать"
         },
         unrlnstr: {
-            "unrlnstr_desc": "Добавить подчеркнутую строку"
+            "unrlnstr_desc": "Добавить подчеркнутую строку",
+            "unrlnstr_delta_height": "",
+            "unrlnstr_delta_width": ""
         },
         preview: {
             "preview_desc": "Предпросмотр"
@@ -137,7 +139,7 @@ tinyMCE.addI18n({
             "table_delta_height": "",
             "table_delta_width": "",
             "cellprops_delta_height": "",
-            "cellprops_delta_width": "",
+            "cellprops_delta_width": "50",
             "rowprops_delta_height": "",
             "rowprops_delta_width": "",
             cell: "Ячейка",
@@ -154,11 +156,11 @@ tinyMCE.addI18n({
             "merge_cells_desc": "Объединить ячейки",
             "split_cells_desc": "Разъединить ячейки",
             "delete_col_desc": "Удалить колонку",
-            "col_after_desc": "Вставить колонку перед",
-            "col_before_desc": "Вставить колонку после",
+            "col_after_desc": "Добавить колонку после текущей",
+            "col_before_desc": "Добавить колонку перед текущей",
             "delete_row_desc": "Удалить строку",
-            "row_after_desc": "Добавить строку перед",
-            "row_before_desc": "Добавить строку после",
+            "row_after_desc": "Добавить строку после текущей",
+            "row_before_desc": "Добавить строку перед текущей",
             desc: "Вставить/Редактировать таблицу"
         },
         autosave: {

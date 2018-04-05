@@ -13,7 +13,9 @@
 
 	// Checks if the selection/caret is at the start of the specified block element
 	function isAtStart(rng, par) {
-		var doc = par.ownerDocument, rng2 = doc.createRange(), elm;
+		var doc = par.ownerDocument,
+			rng2 = doc.createRange(),
+			elm;
 
 		rng2.setStartBefore(par);
 		rng2.setEnd(rng.endContainer, rng.endOffset);
@@ -22,7 +24,8 @@
 		elm.appendChild(rng2.cloneContents());
 
 		// Check for text characters of other elements that should be treated as content
-		return elm.innerHTML.replace(/<(br|img|object|embed|input|textarea)[^>]*>/gi, '-').replace(/<[^>]+>/g, '').length === 0;
+		return elm.innerHTML.replace(/<(br|img|object|embed|input|textarea)[^>]*>/gi,
+			'-').replace(/<[^>]+>/g, '').length === 0;
 	}
 
 	function getSpanVal(td, name) {
@@ -75,11 +78,11 @@
 
 							for (x2 = x; x2 < x + colspan; x2++) {
 								grid[y2][x2] = {
-									part : part,
-									real : y2 == y && x2 == x,
-									elm : td,
-									rowspan : rowspan,
-									colspan : colspan
+									part: part,
+									real: y2 == y && x2 == x,
+									elm: td,
+									rowspan: rowspan,
+									colspan: colspan
 								};
 							}
 						}
@@ -112,7 +115,8 @@
 		}
 
 		function isCellSelected(cell) {
-			return cell && (dom.hasClass(cell.elm, 'mceSelected') || cell == selectedCell);
+			return cell && (dom.hasClass(cell.elm, 'mceSelected') || cell ==
+				selectedCell);
 		}
 
 		function getSelectedRows() {
@@ -149,7 +153,8 @@
 				var curNode;
 
 				if (node.nodeType == 3) {
-					each(dom.getParents(node.parentNode, null, cell).reverse(), function(node) {
+					each(dom.getParents(node.parentNode, null, cell).reverse(), function(
+						node) {
 						node = cloneNode(node, false);
 
 						if (!formatNode) {
@@ -163,7 +168,8 @@
 
 					// Add something to the inner node
 					if (curNode) {
-						curNode.innerHTML = tinymce.isIE && !tinymce.isIE11 ? '&nbsp;' : '<br data-mce-bogus="1" />';
+						curNode.innerHTML = tinymce.isIE && !tinymce.isIE11 ? '&nbsp;' :
+							'<br data-mce-bogus="1" />';
 					}
 
 					return false;
@@ -186,7 +192,8 @@
 		}
 
 		function cleanup() {
-			var rng = dom.createRng(), row;
+			var rng = dom.createRng(),
+				row;
 
 			// Empty rows
 			each(dom.select('tr', table), function(tr) {
@@ -281,7 +288,8 @@
 		}
 
 		function merge(cell, cols, rows) {
-			var startX, startY, endX, endY, x, y, startCell, endCell, children, count, pos;
+			var startX, startY, endX, endY, x, y, startCell, endCell, children, count,
+				pos;
 
 			// Use specified cell and cols/rows
 			if (cell) {
@@ -298,10 +306,16 @@
 					each(row, function(cell, x) {
 						if (isCellSelected(cell)) {
 							if (!startPos) {
-								startPos = {x: x, y: y};
+								startPos = {
+									x: x,
+									y: y
+								};
 							}
 
-							endPos = {x: x, y: y};
+							endPos = {
+								x: x,
+								y: y
+							};
 						}
 					});
 				});
@@ -349,7 +363,8 @@
 								children = tinymce.grep(startCell.childNodes);
 								count = 0;
 								each(children, function(node) {
-									if (node.nodeName == 'BR' && dom.getAttrib(node, 'data-mce-bogus') && count++ < children.length - 1) {
+									if (node.nodeName == 'BR' && dom.getAttrib(node, 'data-mce-bogus') &&
+										count++ < children.length - 1) {
 										startCell.removeChild(node);
 									}
 								});
@@ -492,7 +507,8 @@
 				each(row, function(cell, x) {
 					if (isCellSelected(cell) && tinymce.inArray(cols, x) === -1) {
 						each(grid, function(row) {
-							var cell = row[x].elm, colSpan;
+							var cell = row[x].elm,
+								colSpan;
 
 							colSpan = getSpanVal(cell, 'colSpan');
 
@@ -616,7 +632,8 @@
 			}
 
 			each(rows, function(row) {
-				var cellCount = row.cells.length, cell, i;
+				var cellCount = row.cells.length,
+					cell, i;
 
 				// Remove col/rowspans
 				for (i = 0; i < cellCount; i++) {
@@ -653,7 +670,10 @@
 			each(grid, function(row, y) {
 				each(row, function(cell, x) {
 					if (cell.elm == target) {
-						pos = {x : x, y : y};
+						pos = {
+							x: x,
+							y: y
+						};
 						return false;
 					}
 				});
@@ -708,7 +728,10 @@
 				});
 			});
 
-			return {x : maxX, y : maxY};
+			return {
+				x: maxX,
+				y: maxY
+			};
 		}
 
 		function setEndCell(cell) {
@@ -797,28 +820,29 @@
 
 		// Expose to public
 		tinymce.extend(this, {
-			deleteTable : deleteTable,
-			split : split,
-			merge : merge,
-			insertRow : insertRow,
-			insertCol : insertCol,
-			deleteCols : deleteCols,
-			deleteRows : deleteRows,
-			cutRows : cutRows,
-			copyRows : copyRows,
-			pasteRows : pasteRows,
-			getPos : getPos,
-			setStartCell : setStartCell,
-			setEndCell : setEndCell
+			deleteTable: deleteTable,
+			split: split,
+			merge: merge,
+			insertRow: insertRow,
+			insertCol: insertCol,
+			deleteCols: deleteCols,
+			deleteRows: deleteRows,
+			cutRows: cutRows,
+			copyRows: copyRows,
+			pasteRows: pasteRows,
+			getPos: getPos,
+			setStartCell: setStartCell,
+			setEndCell: setEndCell
 		});
 	}
 
 	tinymce.create('tinymce.plugins.TablePlugin', {
-		init : function(ed, url) {
+		init: function(ed, url) {
 			var winMan, clipboardRows, hasCellSelection = true; // Might be selected cells on reload
 
 			function createTableGrid(node) {
-				var selection = ed.selection, tblElm = ed.dom.getParent(node || selection.getNode(), 'table');
+				var selection = ed.selection,
+					tblElm = ed.dom.getParent(node || selection.getNode(), 'table');
 
 				if (tblElm) {
 					return new TableGrid(tblElm, ed.dom, selection);
@@ -830,7 +854,8 @@
 				ed.getBody().style.webkitUserSelect = '';
 
 				if (hasCellSelection) {
-					ed.dom.removeClass(ed.dom.select('td.mceSelected,th.mceSelected'), 'mceSelected');
+					ed.dom.removeClass(ed.dom.select('td.mceSelected,th.mceSelected'),
+						'mceSelected');
 					hasCellSelection = false;
 				}
 			}
@@ -850,7 +875,11 @@
 				['split_cells', 'table.split_cells_desc', 'mceTableSplitCells', true],
 				['merge_cells', 'table.merge_cells_desc', 'mceTableMergeCells', true]
 			], function(c) {
-				ed.addButton(c[0], {title : c[1], cmd : c[2], ui : c[3]});
+				ed.addButton(c[0], {
+					title: c[1],
+					cmd: c[2],
+					ui: c[3]
+				});
 			});
 
 			// Select whole table is a table border is clicked
@@ -866,7 +895,8 @@
 			}
 
 			ed.onPreProcess.add(function(ed, args) {
-				var nodes, i, node, dom = ed.dom, value;
+				var nodes, i, node, dom = ed.dom,
+					value;
 
 				nodes = dom.select('table', args.node);
 				i = nodes.length;
@@ -914,7 +944,8 @@
 			});
 
 			ed.onInit.add(function(ed) {
-				var startTable, startCell, dom = ed.dom, tableGrid;
+				var startTable, startCell, dom = ed.dom,
+					tableGrid;
 
 				winMan = ed.windowManager;
 
@@ -931,7 +962,8 @@
 				dom.bind(ed.getDoc(), 'mouseover', function(e) {
 					var sel, table, target = e.target;
 
-					if (startCell && (tableGrid || target != startCell) && (target.nodeName == 'TD' || target.nodeName == 'TH')) {
+					if (startCell && (tableGrid || target != startCell) && (target.nodeName ==
+							'TD' || target.nodeName == 'TH')) {
 						table = dom.getParent(target, 'table');
 						if (table == startTable) {
 							if (!tableGrid) {
@@ -963,14 +995,16 @@
 				});
 
 				ed.onMouseUp.add(function(ed) {
-					var rng, sel = ed.selection, selectedCells, walker, node, lastNode;
+					var rng, sel = ed.selection,
+						selectedCells, walker, node, lastNode;
 
 					function setPoint(node, start) {
 						var walker = new tinymce.dom.TreeWalker(node, node);
 
 						do {
 							// Text node
-							if (node.nodeType == 3 && tinymce.trim(node.nodeValue).length !== 0) {
+							if (node.nodeType == 3 && tinymce.trim(node.nodeValue).length !==
+								0) {
 								if (start) {
 									rng.setStart(node, 0);
 								} else {
@@ -1009,7 +1043,8 @@
 							rng.setEndAfter(node);
 
 							setPoint(node, 1);
-							walker = new tinymce.dom.TreeWalker(node, dom.getParent(selectedCells[0], 'table'));
+							walker = new tinymce.dom.TreeWalker(node, dom.getParent(
+								selectedCells[0], 'table'));
 
 							do {
 								if (node.nodeName == 'TD' || node.nodeName == 'TH') {
@@ -1045,12 +1080,14 @@
 						fixTableCellSelection(ed);
 					}
 				});
+
 				function tableCellSelected(ed, rng, n, currentCell) {
 					// The decision of when a table cell is selected is somewhat involved.  The fact that this code is
 					// required is actually a pointer to the root cause of this bug. A cell is selected when the start
 					// and end offsets are 0, the start container is a text, and the selection node is either a TR (most cases)
 					// or the parent of the table (in the case of the selection containing the last cell of a table).
-					var TEXT_NODE = 3, table = ed.dom.getParent(rng.startContainer, 'TABLE'),
+					var TEXT_NODE = 3,
+						table = ed.dom.getParent(rng.startContainer, 'TABLE'),
 						tableParent, allOfCellSelected, tableCellSelection;
 					if (table) {
 						tableParent = table.parentNode;
@@ -1060,7 +1097,8 @@
 						rng.endOffset === 0 &&
 						currentCell &&
 						(n.nodeName === "TR" || n === tableParent);
-					tableCellSelection = (n.nodeName === "TD" || n.nodeName === "TH") && !currentCell;
+					tableCellSelection = (n.nodeName === "TD" || n.nodeName === "TH") &&
+						!currentCell;
 					return allOfCellSelected || tableCellSelection;
 					// return false;
 				}
@@ -1098,52 +1136,150 @@
 				// Add context menu
 				if (ed && ed.plugins.contextmenu) {
 					ed.plugins.contextmenu.onContextMenu.add(function(th, m, e) {
-						var sm, se = ed.selection, el = se.getNode() || ed.getBody();
+						var sm, se = ed.selection,
+							el = se.getNode() || ed.getBody();
 
-						if (ed.dom.getParent(e, 'td') || ed.dom.getParent(e, 'th') || ed.dom.select('td.mceSelected,th.mceSelected').length) {
+						if (ed.dom.getParent(e, 'td') || ed.dom.getParent(e, 'th') || ed.dom
+							.select('td.mceSelected,th.mceSelected').length) {
 							m.removeAll();
 
 							if (el.nodeName == 'A' && !ed.dom.getAttrib(el, 'name')) {
-								m.add({title : 'advanced.link_desc', icon : 'link', cmd : ed.plugins.advlink ? 'mceAdvLink' : 'mceLink', ui : true});
-								m.add({title : 'advanced.unlink_desc', icon : 'unlink', cmd : 'UnLink'});
+								m.add({
+									title: 'advanced.link_desc',
+									icon: 'link',
+									cmd: ed.plugins.advlink ? 'mceAdvLink' : 'mceLink',
+									ui: true
+								});
+								m.add({
+									title: 'advanced.unlink_desc',
+									icon: 'unlink',
+									cmd: 'UnLink'
+								});
 								m.addSeparator();
 							}
 
-							if (el.nodeName == 'IMG' && el.className.indexOf('mceItem') == -1) {
-								m.add({title : 'advanced.image_desc', icon : 'image', cmd : ed.plugins.advimage ? 'mceAdvImage' : 'mceImage', ui : true});
+							if (el.nodeName == 'IMG' && el.className.indexOf('mceItem') == -
+								1) {
+								m.add({
+									title: 'advanced.image_desc',
+									icon: 'image',
+									cmd: ed.plugins.advimage ? 'mceAdvImage' : 'mceImage',
+									ui: true
+								});
 								m.addSeparator();
 							}
 
-							m.add({title : 'table.desc', icon : 'table', cmd : 'mceInsertTable', value : {action : 'insert'}});
-							m.add({title : 'table.props_desc', icon : 'table_props', cmd : 'mceInsertTable'});
-							m.add({title : 'table.del', icon : 'delete_table', cmd : 'mceTableDelete'});
+							m.add({
+								title: 'table.desc',
+								icon: 'table',
+								cmd: 'mceInsertTable',
+								value: {
+									action: 'insert'
+								}
+							});
+							m.add({
+								title: 'table.props_desc',
+								icon: 'table_props',
+								cmd: 'mceInsertTable'
+							});
+							m.add({
+								title: 'table.del',
+								icon: 'delete_table',
+								cmd: 'mceTableDelete'
+							});
 							m.addSeparator();
 
 							// Cell menu
-							sm = m.addMenu({title : 'table.cell'});
-							sm.add({title : 'table.cell_desc', icon : 'cell_props', cmd : 'mceTableCellProps'});
-							sm.add({title : 'table.split_cells_desc', icon : 'split_cells', cmd : 'mceTableSplitCells'});
-							sm.add({title : 'table.merge_cells_desc', icon : 'merge_cells', cmd : 'mceTableMergeCells'});
+							sm = m.addMenu({
+								title: 'table.cell'
+							});
+							sm.add({
+								title: 'table.cell_desc',
+								icon: 'cell_props',
+								cmd: 'mceTableCellProps'
+							});
+							sm.add({
+								title: 'table.split_cells_desc',
+								icon: 'split_cells',
+								cmd: 'mceTableSplitCells'
+							});
+							sm.add({
+								title: 'table.merge_cells_desc',
+								icon: 'merge_cells',
+								cmd: 'mceTableMergeCells'
+							});
 
 							// Row menu
-							sm = m.addMenu({title : 'table.row'});
-							sm.add({title : 'table.row_desc', icon : 'row_props', cmd : 'mceTableRowProps'});
-							sm.add({title : 'table.row_before_desc', icon : 'row_before', cmd : 'mceTableInsertRowBefore'});
-							sm.add({title : 'table.row_after_desc', icon : 'row_after', cmd : 'mceTableInsertRowAfter'});
-							sm.add({title : 'table.delete_row_desc', icon : 'delete_row', cmd : 'mceTableDeleteRow'});
+							sm = m.addMenu({
+								title: 'table.row'
+							});
+							sm.add({
+								title: 'table.row_desc',
+								icon: 'row_props',
+								cmd: 'mceTableRowProps'
+							});
+							sm.add({
+								title: 'table.row_before_desc',
+								icon: 'row_before',
+								cmd: 'mceTableInsertRowBefore'
+							});
+							sm.add({
+								title: 'table.row_after_desc',
+								icon: 'row_after',
+								cmd: 'mceTableInsertRowAfter'
+							});
+							sm.add({
+								title: 'table.delete_row_desc',
+								icon: 'delete_row',
+								cmd: 'mceTableDeleteRow'
+							});
 							sm.addSeparator();
-							sm.add({title : 'table.cut_row_desc', icon : 'cut', cmd : 'mceTableCutRow'});
-							sm.add({title : 'table.copy_row_desc', icon : 'copy', cmd : 'mceTableCopyRow'});
-							sm.add({title : 'table.paste_row_before_desc', icon : 'paste', cmd : 'mceTablePasteRowBefore'}).setDisabled(!clipboardRows);
-							sm.add({title : 'table.paste_row_after_desc', icon : 'paste', cmd : 'mceTablePasteRowAfter'}).setDisabled(!clipboardRows);
+							sm.add({
+								title: 'table.cut_row_desc',
+								icon: 'cut',
+								cmd: 'mceTableCutRow'
+							});
+							sm.add({
+								title: 'table.copy_row_desc',
+								icon: 'copy',
+								cmd: 'mceTableCopyRow'
+							});
+							sm.add({
+								title: 'table.paste_row_before_desc',
+								icon: 'paste',
+								cmd: 'mceTablePasteRowBefore'
+							}).setDisabled(!clipboardRows);
+							sm.add({
+								title: 'table.paste_row_after_desc',
+								icon: 'paste',
+								cmd: 'mceTablePasteRowAfter'
+							}).setDisabled(!clipboardRows);
 
 							// Column menu
-							sm = m.addMenu({title : 'table.col'});
-							sm.add({title : 'table.col_before_desc', icon : 'col_before', cmd : 'mceTableInsertColBefore'});
-							sm.add({title : 'table.col_after_desc', icon : 'col_after', cmd : 'mceTableInsertColAfter'});
-							sm.add({title : 'table.delete_col_desc', icon : 'delete_col', cmd : 'mceTableDeleteCol'});
+							sm = m.addMenu({
+								title: 'table.col'
+							});
+							sm.add({
+								title: 'table.col_before_desc',
+								icon: 'col_before',
+								cmd: 'mceTableInsertColBefore'
+							});
+							sm.add({
+								title: 'table.col_after_desc',
+								icon: 'col_after',
+								cmd: 'mceTableInsertColAfter'
+							});
+							sm.add({
+								title: 'table.delete_col_desc',
+								icon: 'delete_col',
+								cmd: 'mceTableDeleteCol'
+							});
 						} else {
-							m.add({title : 'table.desc', icon : 'table', cmd : 'mceInsertTable'});
+							m.add({
+								title: 'table.desc',
+								icon: 'table',
+								cmd: 'mceInsertTable'
+							});
 						}
 					});
 				}
@@ -1166,23 +1302,28 @@
 							var tableNode = ed.dom.getParent(currentRow, 'table');
 							var middleNode = currentRow.parentNode;
 							var parentNodeName = middleNode.nodeName.toLowerCase();
-							if (parentNodeName === 'tbody' || parentNodeName === (upBool ? 'tfoot' : 'thead')) {
-								var targetParent = getTargetParent(upBool, tableNode, middleNode, 'tbody');
+							if (parentNodeName === 'tbody' || parentNodeName === (upBool ?
+									'tfoot' : 'thead')) {
+								var targetParent = getTargetParent(upBool, tableNode, middleNode,
+									'tbody');
 								if (targetParent !== null) {
 									return moveToRowInTarget(upBool, targetParent, sourceNode, event);
 								}
 							}
-							return escapeTable(upBool, currentRow, siblingDirection, tableNode, event);
+							return escapeTable(upBool, currentRow, siblingDirection, tableNode,
+								event);
 						}
 					}
 
 					function getTargetParent(upBool, topNode, secondNode, nodeName) {
 						var tbodies = ed.dom.select('>' + nodeName, topNode);
 						var position = tbodies.indexOf(secondNode);
-						if (upBool && position === 0 || !upBool && position === tbodies.length - 1) {
+						if (upBool && position === 0 || !upBool && position === tbodies.length -
+							1) {
 							return getFirstHeadOrFoot(upBool, topNode);
 						} else if (position === -1) {
-							var topOrBottom = secondNode.tagName.toLowerCase() === 'thead' ? 0 : tbodies.length - 1;
+							var topOrBottom = secondNode.tagName.toLowerCase() === 'thead' ? 0 :
+								tbodies.length - 1;
 							return tbodies[topOrBottom];
 						} else {
 							return tbodies[position + (upBool ? -1 : 1)];
@@ -1204,7 +1345,8 @@
 						return true;
 					}
 
-					function escapeTable(upBool, currentRow, siblingDirection, table, event) {
+					function escapeTable(upBool, currentRow, siblingDirection, table,
+						event) {
 						var tableSibling = table[siblingDirection];
 						if (tableSibling) {
 							moveCursorToStartOfElement(tableSibling);
@@ -1222,9 +1364,10 @@
 					}
 
 					function getChildForDirection(parent, up) {
-						var child =  parent && parent[up ? 'lastChild' : 'firstChild'];
+						var child = parent && parent[up ? 'lastChild' : 'firstChild'];
 						// BR is not a valid table child to return in this case we return the table cell
-						return child && child.nodeName === 'BR' ? ed.dom.getParent(child, 'td,th') : child;
+						return child && child.nodeName === 'BR' ? ed.dom.getParent(child,
+							'td,th') : child;
 					}
 
 					function moveCursorToStartOfElement(n) {
@@ -1276,11 +1419,13 @@
 						var newNode = ed.selection.getNode();
 						var newParent = ed.dom.getParent(newNode, 'td,th');
 						var oldParent = ed.dom.getParent(preBrowserNode, 'td,th');
-						return newParent && newParent !== oldParent && checkSameParentTable(newParent, oldParent);
+						return newParent && newParent !== oldParent && checkSameParentTable(
+							newParent, oldParent);
 					}
 
 					function checkSameParentTable(nodeOne, NodeTwo) {
-						return ed.dom.getParent(nodeOne, 'TABLE') === ed.dom.getParent(NodeTwo, 'TABLE');
+						return ed.dom.getParent(nodeOne, 'TABLE') === ed.dom.getParent(
+							NodeTwo, 'TABLE');
 					}
 
 					if (isVerticalMovement() && isInTable(ed)) {
@@ -1309,9 +1454,13 @@
 
 					if (last && last.nodeName === 'TABLE') {
 						if (ed.settings.forced_root_block) {
-							ed.dom.add(ed.getBody(), ed.settings.forced_root_block, null, tinymce.isIE && !tinymce.isIE11 ? '&nbsp;' : '<br data-mce-bogus="1" />');
+							ed.dom.add(ed.getBody(), ed.settings.forced_root_block, null,
+								tinymce.isIE && !tinymce.isIE11 ? '&nbsp;' :
+								'<br data-mce-bogus="1" />');
 						} else {
-							ed.dom.add(ed.getBody(), 'br', {'data-mce-bogus': '1'});
+							ed.dom.add(ed.getBody(), 'br', {
+								'data-mce-bogus': '1'
+							});
 						}
 					}
 				}
@@ -1351,7 +1500,10 @@
 				ed.onPreProcess.add(function(ed, o) {
 					var last = o.node.lastChild;
 
-					if (last && (last.nodeName == "BR" || (last.childNodes.length == 1 && (last.firstChild.nodeName == 'BR' || last.firstChild.nodeValue == '\u00a0'))) && last.previousSibling && last.previousSibling.nodeName == "TABLE") {
+					if (last && (last.nodeName == "BR" || (last.childNodes.length == 1 &&
+							(last.firstChild.nodeName == 'BR' || last.firstChild.nodeValue ==
+								'\u00a0'))) && last.previousSibling && last.previousSibling.nodeName ==
+						"TABLE") {
 						ed.dom.remove(last);
 					}
 				});
@@ -1377,16 +1529,18 @@
 				*/
 
 				fixTableCaretPos();
-				ed.startContent = ed.getContent({format : 'raw'});
+				ed.startContent = ed.getContent({
+					format: 'raw'
+				});
 			});
 
 			// Register action commands
 			each({
-				mceTableSplitCells : function(grid) {
+				mceTableSplitCells: function(grid) {
 					grid.split();
 				},
 
-				mceTableMergeCells : function(grid) {
+				mceTableMergeCells: function(grid) {
 					var rowSpan, colSpan, cell;
 
 					cell = ed.dom.getParent(ed.selection.getNode(), 'th,td');
@@ -1397,64 +1551,66 @@
 
 					if (!ed.dom.select('td.mceSelected,th.mceSelected').length) {
 						winMan.open({
-							url : url + '/merge_cells.htm',
-							width : 240 + parseInt(ed.getLang('table.merge_cells_delta_width', 0), 10),
-							height : 110 + parseInt(ed.getLang('table.merge_cells_delta_height', 0), 10),
-							inline : 1
+							url: url + '/merge_cells.htm',
+							width: 240 + parseInt(ed.getLang(
+								'table.merge_cells_delta_width', 0), 10),
+							height: 110 + parseInt(ed.getLang(
+								'table.merge_cells_delta_height', 0), 10),
+							inline: 1
 						}, {
-							rows : rowSpan,
-							cols : colSpan,
-							onaction : function(data) {
+							rows: rowSpan,
+							cols: colSpan,
+							onaction: function(data) {
 								grid.merge(cell, data.cols, data.rows);
 							},
-							plugin_url : url
+							plugin_url: url
 						});
 					} else {
 						grid.merge();
 					}
 				},
 
-				mceTableInsertRowBefore : function(grid) {
+				mceTableInsertRowBefore: function(grid) {
 					grid.insertRow(true);
 				},
 
-				mceTableInsertRowAfter : function(grid) {
+				mceTableInsertRowAfter: function(grid) {
 					grid.insertRow();
 				},
 
-				mceTableInsertColBefore : function(grid) {
+				mceTableInsertColBefore: function(grid) {
 					grid.insertCol(true);
 				},
 
-				mceTableInsertColAfter : function(grid) {
+				mceTableInsertColAfter: function(grid) {
 					grid.insertCol();
 				},
 
-				mceTableDeleteCol : function(grid) {
+				mceTableDeleteCol: function(grid) {
 					grid.deleteCols();
 				},
 
-				mceTableDeleteRow : function(grid) {
+				mceTableDeleteRow: function(grid) {
 					grid.deleteRows();
 				},
 
-				mceTableCutRow : function(grid) {
+				mceTableCutRow: function(grid) {
 					clipboardRows = grid.cutRows();
 				},
 
-				mceTableCopyRow : function(grid) {
+				mceTableCopyRow: function(grid) {
 					clipboardRows = grid.copyRows();
 				},
 
-				mceTablePasteRowBefore : function(grid) {
+				mceTablePasteRowBefore: function(grid) {
 					grid.pasteRows(clipboardRows, true);
 				},
 
-				mceTablePasteRowAfter : function(grid) {
+				mceTablePasteRowAfter: function(grid) {
 					grid.pasteRows(clipboardRows);
 				},
 
-				mceTableDelete : function(grid) {
+				mceTableDelete: function(grid) {
 					grid.deleteTable();
 				}
 			}, function(func, name) {
@@ -1471,37 +1627,43 @@
 
 			// Register dialog commands
 			each({
-				mceInsertTable : function(val) {
+				mceInsertTable: function(val) {
 					winMan.open({
-						url : url + '/table.htm',
-						width : 400 + parseInt(ed.getLang('table.table_delta_width', 0), 10),
-						height : 320 + parseInt(ed.getLang('table.table_delta_height', 0), 10),
-						inline : 1
+						url: url + '/table.htm',
+						width: 400 + parseInt(ed.getLang('table.table_delta_width', 0),
+							10),
+						height: 320 + parseInt(ed.getLang('table.table_delta_height', 0),
+							10),
+						inline: 1
 					}, {
-						plugin_url : url,
-						action : val ? val.action : 0
+						plugin_url: url,
+						action: val ? val.action : 0
 					});
 				},
 
-				mceTableRowProps : function() {
+				mceTableRowProps: function() {
 					winMan.open({
-						url : url + '/row.htm',
-						width : 400 + parseInt(ed.getLang('table.rowprops_delta_width', 0), 10),
-						height : 295 + parseInt(ed.getLang('table.rowprops_delta_height', 0), 10),
-						inline : 1
+						url: url + '/row.htm',
+						width: 400 + parseInt(ed.getLang('table.rowprops_delta_width', 0),
+							10),
+						height: 295 + parseInt(ed.getLang('table.rowprops_delta_height',
+							0), 10),
+						inline: 1
 					}, {
-						plugin_url : url
+						plugin_url: url
 					});
 				},
 
-				mceTableCellProps : function() {
+				mceTableCellProps: function() {
 					winMan.open({
-						url : url + '/cell.htm',
-						width : 400 + parseInt(ed.getLang('table.cellprops_delta_width', 0), 10),
-						height : 295 + parseInt(ed.getLang('table.cellprops_delta_height', 0), 10),
-						inline : 1
+						url: url + '/cell.htm',
+						width: 400 + parseInt(ed.getLang('table.cellprops_delta_width',
+							0), 10),
+						height: 295 + parseInt(ed.getLang('table.cellprops_delta_height',
+							0), 10),
+						inline: 1
 					}, {
-						plugin_url : url
+						plugin_url: url
 					});
 				}
 			}, function(func, name) {

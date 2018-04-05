@@ -7,11 +7,17 @@
 	    selector: "textarea#eml1",
 	    mode : "textareas",
 	    theme : "advanced",
-		language : 'en',
+		language : 'ru',
 	    plugins : "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,unrlnStr",
 	    entity_encoding : "raw",
-		content_style: "ol, ul, p {font-size: 16px; font-family: times new roman,times,serif; line-height:1.15; margin:0; white-space:pre-wrap;} body {margin:0; padding:8px;} img {border:none;}",
-
+		content_css : "tinymce/content.css",
+		style_formats : [
+						{title : 'Стандарт', inline : 'span', classes : 'standart alignjust'},
+						{title : 'Красная строка', block : 'p', classes : 'red_line'},
+						{title : 'Стили таблиц'},
+						{title : 'С границей', selector : 'table', classes : 'table_border td_border'},
+						{title : 'Без границы', selector : 'table', classes : 'table_unborder'}
+		            ],
 		theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
 		// Theme options
 	    theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",

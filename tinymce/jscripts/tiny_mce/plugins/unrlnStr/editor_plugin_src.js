@@ -14,8 +14,10 @@
 			ed.addCommand('mceUnrlnStr', function() {
 				ed.windowManager.open({
 					file: url + '/unrlnstr_dlg.htm',
-					width: 420,
-					height: 110,
+					width: 420 + parseInt(ed.getLang('unrlnstr.unrlnstr_delta_width',
+						0), 10),
+					height: 110 + parseInt(ed.getLang('unrlnstr.unrlnstr_delta_height',
+						0), 10),
 					inline: 1
 				}, {
 					plugin_url: url, // Plugin absolute URL
