@@ -1,6 +1,6 @@
 /* CSS file for tinyMCE content_css */
 
-ol, ul, p {
+ol, ul, p, td {
 	font-size: 16px;
 	font-family: times new roman,times,serif;
 	line-height:1.15;
