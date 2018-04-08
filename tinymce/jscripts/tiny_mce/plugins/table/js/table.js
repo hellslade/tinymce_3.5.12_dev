@@ -433,8 +433,8 @@ function init() {
 		border = tinyMCEPopup.getParam('table_default_border', ''),
 		cellpadding = tinyMCEPopup.getParam('table_default_cellpadding', ''),
 		cellspacing = tinyMCEPopup.getParam('table_default_cellspacing', '');
-	var align = "",
-		width = "100%",
+	var align = "center",
+		width = "98%",
 		height = "",
 		bordercolor = "",
 		bgcolor = "",
