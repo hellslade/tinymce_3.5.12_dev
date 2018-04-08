@@ -10,9 +10,8 @@
 		language : 'ru',
 	    plugins : "pagebreak,style,layer,table,save,advimage,advlink,inlinepopups,,preview,searchreplace,print,contextmenu,paste,fullscreen,noneditable,visualchars,unrlnStr",
 	    entity_encoding : "raw",
-		// По умолчанию выключить отображение невидимых границ таблицы
-		visual: false,
-		content_css : "tinymce/content.css",
+		visual:false,
+		content_css : "tinymce/jscripts/tiny_mce/content.css",
 		style_formats : [
 						{title : 'Стандарт', inline : 'span', classes : 'standart alignjust'},
 						{title : 'Красная строка', block : 'p', classes : 'red_line'},
@@ -32,10 +31,10 @@
 
 		oninit: function() {
 				console.log('oninit');
-                tinyMCE.get('elm1').execCommand('mceFullScreen');
-                tinyMCE.get('elm1').execCommand('mceToggleVisualAid');
+                // tinyMCE.get('elm1').execCommand('mceFullScreen');
+                // tinyMCE.get('elm1').execCommand('mceToggleVisualAid');
 			},
-	    setup : function(ed) {
+		setup : function(ed) {
 			// Выполнить перед выполнением команды
 	    	ed.onBeforeExecCommand.add(function(ed, cmd, ui, val) {
 				// Если команда "Печать"
@@ -48,7 +47,7 @@
 			   		}
 				}
 	       	});
-	   		},
+	   	},
 		});
 	</script>
 <!-- /TinyMCE -->
